@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MenuList from './component/menulist';
 import NavBar from './component/navbar';
+import MenuGridList from './component/menugridlist/MenuGridList';
+import {Container} from '@material-ui/core';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div >
-      <NavBar />
-      <MenuList />
-    </div>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <NavBar />
+        <Container maxWidth="md" >
+          <MenuGridList />
+        </Container>
+        {/*<ItemDialog id={0} open={true}/>*/}
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
