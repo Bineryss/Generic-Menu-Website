@@ -5,14 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import NavBar from './component/navbar';
 import MenuGridList from './component/menugridlist/MenuGridList';
 import {Container} from '@material-ui/core';
+import ItemDialog from "./component/itemdialog/ItemDialog";
+import MainPage from "./page/MainPage";
 
 ReactDOM.render(
     <React.StrictMode>
-        <NavBar />
-        <Container maxWidth="md" >
-          <MenuGridList />
-        </Container>
-        {/*<ItemDialog id={0} open={true}/>*/}
+        <NavBar/>
+        <MainPage/>
+        {/*<ItemDialog id={0} open={true} setOpen={null}/>*/}
     </React.StrictMode>,
     document.getElementById('root')
 );

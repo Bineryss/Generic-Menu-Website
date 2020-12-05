@@ -24,13 +24,13 @@ export const MenuItems: MenuItemProps[] = [
         title: "Spieße",
         price: 23,
         images: ["https://www.urlaubstracker.de/wp-content/uploads/2019/03/japan_streetfood-900x601.jpg"],
-        description: "Eine Saftiges SChnitzel, dass als Beilagen Kartoffeln und Rotes Zeug hat"
+        description: "Eine Saftiges Schnitzel, dass als Beilagen Kartoffeln und Rotes Zeug hat"
     },
     {
         id: 3,
         title: "Udon Nudel",
         price: 12,
         images: ["https://www.urlaubstracker.de/wp-content/uploads/2019/03/japan_ramen_suppe-900x649.jpg"],
-        description: "Eine Saftiges SChnitzel, dass als Beilagen Kartoffeln und Rotes Zeug hat"
+        description: "Eine Saftiges Schnitzel, dass als Beilagen Kartoffeln und Rotes Zeug hat"
     },
 ]

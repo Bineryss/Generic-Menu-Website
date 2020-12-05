@@ -13,26 +13,26 @@ const MenuGridList: React.FC = () => {
     const [current, setCurrent] = useState(0)
 
     const handleClick = (id: number) => {
-        console.log("#Test", id)
         setOpen(true)
         setCurrent(id)
     }
+
     return (
         <Fragment>
             <div className={classes.root}>
                 <GridList>
-                    {cardData.map(el => (
-                        <GridListTile key={el.id}>
-                            <img src={el.images[0]} alt={""} onClick={() => handleClick(el.id)} />
+                    {cardData.map(item => (
+                        <GridListTile key={item.id}>
+                            <img src={item.images[0]} alt={""} onClick={() => handleClick(item.id)}/>
                             <GridListTileBar
-                                title={el.title}
+                                title={item.title}
                                 titlePosition="top"
-                                className={classes.titleBar} />
+                                className={classes.titleBar}/>
                         </GridListTile>
                     ))}
                 </GridList>
             </div>
-            <ItemDialog id={current} open={open} />
+            <ItemDialog id={current} open={open} setOpen={setOpen}/>
         </Fragment>
     )
 }
