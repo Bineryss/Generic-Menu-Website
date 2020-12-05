@@ -1,10 +1,13 @@
 import {
-    Button, ButtonGroup, createStyles,
+    Button,
+    ButtonGroup,
+    createStyles,
     Dialog,
     DialogActions,
     DialogContent,
-    IconButton, SvgIcon,
-    TextField, Theme,
+    IconButton,
+    SvgIcon,
+    Theme,
     Typography,
     withStyles,
     WithStyles
@@ -15,10 +18,8 @@ import {MenuItems} from "../../datamodel/menuitem/CardData"
 import {useStyles} from "./styles"
 import SwipeableText from "../swipepage/SwipebleImages";
 import CloseIcon from '@material-ui/icons/Close';
-import Fab from "@material-ui/core/Fab";
 import AddIcon from '@material-ui/icons/Add';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-import Grid from "@material-ui/core/Grid";
 
 
 const ItemDialog: React.FC<{ id: number, open: boolean, setOpen: any }> = ({
@@ -31,12 +32,9 @@ const ItemDialog: React.FC<{ id: number, open: boolean, setOpen: any }> = ({
 
     const [value, setValue] = useState(1)
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(parseInt(event.target.value))
-    }
-
     const handleClose = () => {
         setOpen(false)
+        setValue(1)
     }
 
     const handleBuy = () => {
@@ -59,12 +57,6 @@ const ItemDialog: React.FC<{ id: number, open: boolean, setOpen: any }> = ({
                 </Typography>
             </DialogContent>
             <DialogActions>
-                {/*<TextField*/}
-                {/*    label={"Anzahl"}*/}
-                {/*    type={"number"}*/}
-                {/*    value={value}*/}
-                {/*    onChange={handleChange}*/}
-                {/*/>*/}
             </DialogActions>
             <ButtonGroup variant={"text"} color={"primary"}
                          fullWidth>
