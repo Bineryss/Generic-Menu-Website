@@ -1,6 +1,6 @@
 import React from "react"
 import {Container, Hidden} from "@material-ui/core";
-import MenuGridList from "../component/menugridlist/MenuGridList";
+import MenuGridList from "../components/menugridlist/MenuGridList";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
