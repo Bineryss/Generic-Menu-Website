@@ -2,11 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 import App from './App'
-
+import { Provider } from 'react-redux'
+import { store } from './Store'
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<Provider store={store}>
+			<App />
+		</Provider>
 		{/*<ItemDialog id={0} open={true} setOpen={null}/>*/}
 	</React.StrictMode>,
 	document.getElementById('root')
