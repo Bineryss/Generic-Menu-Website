@@ -4,13 +4,13 @@ import reportWebVitals from './reportWebVitals'
 import App from './App'
 import { Provider } from 'react-redux'
 import { store } from './Store'
+import ShoppingList from './components/shoppinglist/ShoppingList'
 
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+				<App />
 		</Provider>
-		{/*<ItemDialog id={0} open={true} setOpen={null}/>*/}
 	</React.StrictMode>,
 	document.getElementById('root')
 )

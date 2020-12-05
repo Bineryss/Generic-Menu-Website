@@ -22,7 +22,7 @@ export const shopingListReducer = (
 	action: Action
 ) => {
 	switch (action.type) {
-		case 'ADD_ITEM': {
+		case "ADD_ITEM": {
 			return {
 				...state,
 				items: [...state.items, action.payload],
