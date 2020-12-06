@@ -40,12 +40,13 @@ const NavBar: React.FC = () => {
 				<Typography variant="h6" className={classes.title}>
 					Menu Card
 				</Typography>
-				{/* <Button variant={'outlined'}>
-					<Typography variant={'h6'} style={{ marginRight: '20px' }}>
-						{price}€
-					</Typography>
-					<ShoppingCartIcon />
-				</Button> */}
+				<Typography
+					variant={'h6'}
+					style={{ marginRight: '20px', fontWeight: 'bold' }}
+				>
+					{price}€
+				</Typography>
+				{/* <ShoppingCartIcon /> */}
 			</Toolbar>
 		</AppBar>
 	)

@@ -1,15 +1,19 @@
-import { Paper } from '@material-ui/core'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeItem } from '../../actions/ItemActions'
-import { MenuItems } from '../../database/CardData'
 import { ListItem, ListState } from '../../reducer/ShopingListReducer'
 import ShoppingListItem from '../shoppinglistitem/ShoppinglistItem'
+import { MenuItems } from '../../database/CardData'
+import { Divider, Typography } from '@material-ui/core'
+import Grid from '@material-ui/core/Grid'
 
 const ShoppingList: React.FC = () => {
-	const items = useSelector<ListState, ListItem[]>(
-		state => state.listItems.map(el => {return el.item})
+	const items = useSelector<ListState, ListItem[]>(state =>
+		state.listItems.map(el => {
+			return el.item
+		})
 	)
-	const cardData = MenuItems
+	const price = useSelector<ListState, number>(state => state.price)
 
 	const dispatch = useDispatch()
 
@@ -19,16 +23,32 @@ const ShoppingList: React.FC = () => {
 	}
 
 	return (
-		<Paper>
-			{items.map(({ id, price }) => (
-				<ShoppingListItem
-					id={id}
-					title={cardData[id].title}
-					price={price}
-					onRemove={handleRemove}
-				/>
+		<React.Fragment>
+			{items.map((item, index) => (
+				<div style={{ minWidth: '250px', paddingBottom: '20px' }}>
+					<ShoppingListItem
+						item={{ ...item, title: MenuItems[item.id].title }}
+						onRemove={handleRemove}
+					/>
+					<Divider />
+				</div>
 			))}
-		</Paper>
+			<Grid
+				container
+				direction="row"
+				alignItems="center"
+				justify="space-between"
+			>
+				<Grid item>
+					<Typography>Gesammt kosten:</Typography>
+				</Grid>
+				<Grid item>
+					<Typography variant="h6" style={{ fontWeight: 'bold' }}>
+						{price}€
+					</Typography>
+				</Grid>
+			</Grid>
+		</React.Fragment>
 	)
 }
 

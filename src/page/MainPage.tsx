@@ -18,15 +18,18 @@ import { ListState } from '../reducer/ShopingListReducer'
 import { useState } from 'react'
 import ShoppingListDialog from '../components/shoppinglist/ShoppingListDialog'
 
+import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined'
+
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
-            paddingTop: '10px',
-            paddingBottom: '10px'
+			paddingTop: '10px',
+			paddingBottom: '10px'
 		},
 		fab: {
 			bottom: 20,
 			position: 'fixed',
+			padding: '4vh',
 			zIndex: 1
 		}
 	})
@@ -47,10 +50,9 @@ const MainPage: React.FC = () => {
 						<Fab
 							className={classes.fab}
 							onClick={() => setOpen(true)}
-							variant={'extended'}
 							color={'secondary'}
 						>
-							Bestellung von {price}€
+							<ShoppingBasketOutlinedIcon fontSize="large" />
 						</Fab>
 					</Grid>
 					<MenuGridList />

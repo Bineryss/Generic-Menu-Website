@@ -28,6 +28,9 @@ export const shopingListReducer = (
 		case 'REMOVE_ITEM':
 			return removeItem(state, action.payload)
 
+		case 'CHANGE_ITEM_COUNT':
+			console.log('add functionality')
+			return state
 		default:
 			return state
 	}

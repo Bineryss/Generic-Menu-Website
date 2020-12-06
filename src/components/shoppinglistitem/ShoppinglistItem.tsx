@@ -1,40 +1,56 @@
 import { IconButton, Typography } from '@material-ui/core'
+import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import RemoveIcon from '@material-ui/icons/Remove'
 import React from 'react'
+import { ListItem } from '../../reducer/ShopingListReducer'
 
-export interface ShoppingListItemProps {
-	id: number
-	title: string
-	price: number
+export interface ShoppingListItemComponentProps {
+	item: ShoppingListItemProps
 	onRemove: (id: number) => void
 }
 
-const ShoppingListItem: React.FC<ShoppingListItemProps> = ({
-	id,
-	title,
-	price,
+export interface ShoppingListItemProps extends ListItem {
+	title: string
+}
+
+const ShoppingListItem: React.FC<ShoppingListItemComponentProps> = ({
+	item,
 	onRemove
 }) => {
+	const { id, title, price, count } = item
+
 	return (
-		<Grid
-			container
-			direction="row"
-			alignItems="center"
-			justify="space-evenly"
-		>
-			<Grid item>
-				<Typography>{title}</Typography>
+		<React.Fragment>
+			<Typography variant="h6" style={{ fontWeight: 'bold' }}>
+				{title}
+			</Typography>
+			<Grid
+				container
+				direction="row"
+				alignItems="center"
+				justify="space-between"
+				style={{
+					paddingTop: '10px',
+					paddingBottom: '10px'
+				}}
+			>
+				<Grid item>
+					<Button>-</Button>
+				</Grid>
+				<Grid item>
+					<Typography>{count}</Typography>
+				</Grid>
+				<Grid item>
+					<Button>+</Button>
+				</Grid>
+				<Grid item>
+					<Typography style={{ fontWeight: 'bold' }}>
+						{price}€
+					</Typography>
+				</Grid>
 			</Grid>
-			<Grid item>
-				<IconButton onClick={() => onRemove(id)}>
-					<RemoveIcon />
-				</IconButton>
-			</Grid>
-			<Grid item>
-				<Typography>{price}€</Typography>
-			</Grid>
-		</Grid>
+		</React.Fragment>
 	)
 }
 

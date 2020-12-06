@@ -1,6 +1,9 @@
 import { ListItem } from '../reducer/ShopingListReducer'
 
-export type Action = { type: 'ADD_ITEM' | 'REMOVE_ITEM'; payload: ListItem }
+export type Action = {
+	type: 'ADD_ITEM' | 'REMOVE_ITEM' | 'CHANGE_ITEM_COUNT'
+	payload: ListItem
+}
 
 export const addItem = (item: ListItem): Action => ({
 	type: 'ADD_ITEM',
@@ -12,6 +15,15 @@ export const removeItem = (id: number): Action => ({
 	payload: {
 		id: id,
 		count: -1000,
+		price: -1000
+	}
+})
+
+export const changeItemAmmount = (id: number, count: number) => ({
+	type: 'CHANGE_ITEM_COUNT',
+	payload: {
+		id: id,
+		count: count,
 		price: -1000
 	}
 })
