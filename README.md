@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Generic Menu Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is this about?
 
-## Available Scripts
+peronaly I hate menu cards at a resturant. There allways to big, I cant find anything in it, there allways to few and when I get to order I forgot hlf of what I wanted to order
 
-In the project directory, you can run:
+So this React based project should fix all the above problemws with a modern and mobile optimised approach.
 
-### `npm start`
+This project should make it easy for resturant owners to setup a simple online menu card.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to add new items to the menu?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Who needs a Database if you can load everything in the ram... sounds reasonable
 
-### `npm test`
+Thanks to its simple datastructure even non programmer can add new Items to the menu
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A menu item is structured as simply as possible:
 
-### `npm run build`
+```
+{
+    id: number,
+    title: string,
+    price: nnumber,
+    description: string,
+    category: number
+    images: [
+        string, ....
+    ]
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   id: must be a unique number
+-   title: name of the dish
+-   price: well price of the dish... duh
+-   description: a short description of the dish
+-   category: which category is the dish in
+-   images: an array of strings with the path to the images, one images is needed more are optional
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Future changes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   choose between side dishes in the main dish
+-   proper backend (maybe.. probably not)
 
-### `npm run eject`
+## Disclaimer
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is a fun project and will probably be discontinued in the next few weeks
