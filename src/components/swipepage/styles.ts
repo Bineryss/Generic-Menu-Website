@@ -13,7 +13,7 @@ export const useStyles = makeStyles(theme => ({
 		backgroundColor: theme.palette.background.default
 	},
 	img: {
-		height: 300,
+		height: '30vh',
 		display: 'block',
 		overflow: 'hidden',
 		width: '100%',
