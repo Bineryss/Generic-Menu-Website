@@ -3,7 +3,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core'
 export const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		root: {
-			backdropFilter: 'blur(8px)'
+			backdropFilter: 'blur(8px)',
 		},
 		title: {
 			fontFamily: 'Rubik',
@@ -20,7 +20,11 @@ export const useStyles = makeStyles((theme: Theme) =>
 			color: '#ffffff',
 			zIndex: 1
 		},
-		addText: {
+		addCardButton: {
+			borderRadius: '0px'
+		},
+		addCardText: {
+			marginRight: '10px',
 			fontWeight: 'bold'
 		}
 	})

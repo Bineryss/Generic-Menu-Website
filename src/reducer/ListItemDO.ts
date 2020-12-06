@@ -20,6 +20,10 @@ export default class ListItemDO {
 		return this.pItem
 	}
 
+	get count() {
+		return this.pItem.count
+	}
+
 	public increaseAmmount(count: number) {
 		const newCount = this.pItem.count + count
 		this.updateItem(newCount)

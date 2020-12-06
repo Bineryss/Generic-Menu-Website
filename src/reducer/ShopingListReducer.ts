@@ -28,9 +28,11 @@ export const shopingListReducer = (
 		case 'REMOVE_ITEM':
 			return removeItem(state, action.payload)
 
-		case 'CHANGE_ITEM_COUNT':
-			console.log('add functionality')
-			return state
+		case 'DECREAS_ITEM_COUNT':
+			return decreasSetAmmount(state, action.payload)
+
+		case 'INCREAS_ITEM_COUNT':
+			return increaseSetAmmount(state, action.payload)
 		default:
 			return state
 	}
@@ -62,6 +64,41 @@ const addItem = (state: ListState, payload: ListItem) => {
 const removeItem = (state: ListState, payload: ListItem) => {
 	const newItemList = state.listItems.filter(item => {
 		return item.id !== payload.id
+	})
+
+	return {
+		...state,
+		listItems: newItemList,
+		price: updatePrice(newItemList)
+	}
+}
+
+const decreasSetAmmount = (state: ListState, payload: ListItem) => {
+	const newItemList = state.listItems
+		.filter(item => {
+			console.log(item.id !== payload.id || item.count > 0)
+			return item.id !== payload.id || item.count > 0
+		})
+		.map(item => {
+			if (item.id === payload.id) {
+				item.deacreaseAmmount(payload.count)
+			}
+			return item
+		})
+
+	return {
+		...state,
+		listItems: newItemList,
+		price: updatePrice(newItemList)
+	}
+}
+
+const increaseSetAmmount = (state: ListState, payload: ListItem) => {
+	const newItemList = state.listItems.map(item => {
+		if (item.id === payload.id) {
+			item.increaseAmmount(payload.count)
+		}
+		return item
 	})
 
 	return {
