@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) =>
 			zIndex: 1
 		},
 		addText: {
-			marginRight: '10px'
+			fontWeight: 'bold'
 		}
 	})
 )

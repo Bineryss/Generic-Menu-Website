@@ -22,7 +22,7 @@ const ShoppingListItem: React.FC<ShoppingListItemComponentProps> = ({
 
 	return (
 		<React.Fragment>
-			<Typography variant="h6" style={{ fontWeight: 'bold' }}>
+			<Typography>
 				{title}
 			</Typography>
 			<Grid

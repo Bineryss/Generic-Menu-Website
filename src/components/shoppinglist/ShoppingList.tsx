@@ -40,10 +40,12 @@ const ShoppingList: React.FC = () => {
 				justify="space-between"
 			>
 				<Grid item>
-					<Typography>Gesammt kosten:</Typography>
+					<Typography style={{ fontWeight: 'bold' }}>
+						Gesamt
+					</Typography>
 				</Grid>
 				<Grid item>
-					<Typography variant="h6" style={{ fontWeight: 'bold' }}>
+					<Typography style={{ fontWeight: 'bold' }}>
 						{price}€
 					</Typography>
 				</Grid>

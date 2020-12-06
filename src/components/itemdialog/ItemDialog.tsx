@@ -2,6 +2,7 @@ import {
 	Button,
 	ButtonGroup,
 	Dialog,
+	DialogActions,
 	DialogContent,
 	Typography
 } from '@material-ui/core'
@@ -17,6 +18,7 @@ import RemoveIcon from '@material-ui/icons/Remove'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
+import Grid from '@material-ui/core/Grid'
 
 const ItemDialog: React.FC<{ id: number; open: boolean; setOpen: any }> = ({
 	id,
@@ -65,24 +67,33 @@ const ItemDialog: React.FC<{ id: number; open: boolean; setOpen: any }> = ({
 			<SwipeableImages images={images} />
 			<DialogContent>
 				<Typography variant={'h6'} className={classes.title}>
-					{title} {price * value}€
+					{title}
 				</Typography>
 				<Typography gutterBottom>{description}</Typography>
 			</DialogContent>
-			<ButtonGroup variant={'text'} color={'primary'} fullWidth>
+			<ButtonGroup disableElevation  variant={'text'} color={'primary'} fullWidth>
 				<Button
 					onClick={() => (value !== 1 ? setValue(value - 1) : null)}
 				>
 					<RemoveIcon />
 				</Button>
+				<Button>
+					<Typography variant={'h5'}>
+						{value}
+					</Typography>
+				</Button>
 				<Button onClick={() => setValue(value + 1)}>
 					<AddIcon />
 				</Button>
-				<Button onClick={handleBuy}>
+				<Button
+					variant="contained"
+					onClick={handleBuy}
+					style={{ borderRadius: '0px' }}
+				>
 					<Typography variant={'h5'} className={classes.addText}>
-						{value} *
+						{value * price}€
 					</Typography>
-					<AddShoppingCartIcon />
+					{/* <AddShoppingCartIcon /> */}
 				</Button>
 			</ButtonGroup>
 		</Dialog>
