@@ -17,11 +17,13 @@ import { useSelector } from 'react-redux'
 import { ListState } from '../reducer/ShopingListReducer'
 import { useState } from 'react'
 import ShoppingListDialog from '../components/shoppinglist/ShoppingListDialog'
-import Box from '@material-ui/core/Box'
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		root: {},
+		root: {
+            paddingTop: '10px',
+            paddingBottom: '10px'
+		},
 		fab: {
 			bottom: 20,
 			position: 'fixed',
@@ -38,19 +40,19 @@ const MainPage: React.FC = () => {
 	const [open, setOpen] = useState(false)
 
 	return (
-		<React.Fragment>
+		<div className={classes.root}>
 			<Hidden smUp>
-				<Grid container justify={'center'}>
-					<Fab
-						className={classes.fab}
-						onClick={() => setOpen(true)}
-						variant={'extended'}
-						color={'secondary'}
-					>
-						Bestellung von {price}€
-					</Fab>
-				</Grid>
 				<Container>
+					<Grid container justify={'center'}>
+						<Fab
+							className={classes.fab}
+							onClick={() => setOpen(true)}
+							variant={'extended'}
+							color={'secondary'}
+						>
+							Bestellung von {price}€
+						</Fab>
+					</Grid>
 					<MenuGridList />
 					<ShoppingListDialog open={open} setOpen={setOpen} />
 				</Container>
@@ -71,7 +73,7 @@ const MainPage: React.FC = () => {
 					</Grid>
 				</Grid>
 			</Hidden>
-		</React.Fragment>
+		</div>
 	)
 }
 

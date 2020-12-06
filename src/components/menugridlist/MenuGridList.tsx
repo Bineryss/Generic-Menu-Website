@@ -1,5 +1,4 @@
 import { GridList, GridListTile, GridListTileBar } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography/Typography'
 import React, { Fragment, useState } from 'react'
 import { MenuItems } from '../../database/CardData'
 import ItemDialog from '../itemdialog/ItemDialog'

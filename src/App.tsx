@@ -18,13 +18,11 @@ const App: React.FC = () => {
 	})
 
 	return (
-		<React.Fragment>
-			<MuiThemeProvider theme={theme}>
-				<NavBar />
-				<SwipeableDrawer />
-				<MainPage />
-			</MuiThemeProvider>
-		</React.Fragment>
+		<MuiThemeProvider theme={theme}>
+			<NavBar />
+			<SwipeableDrawer />
+			<MainPage />
+		</MuiThemeProvider>
 	)
 }
 
